@@ -33,5 +33,6 @@ export function ThoughtButton({
         ? "pensando..."
         : "espiar pensamentos "}
     </button>
+    
   );
 }
