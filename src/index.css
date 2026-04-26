@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+*{
+  scroll-behavior: smooth;
+}
+
+.poem-modal-background { 
+    backdrop-filter: blur(10px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
+    background-color: rgba(255, 0, 66, 0.15);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-scroll {
+  scroll-behavior: smooth;
+}
+
+/* scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* bolinha */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 182, 193, 0.6);
+  border-radius: 999px;
+}
+
+/* hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 182, 193, 0.9);
+}
+
+/* barras do waveform */
+.wave-bar {
+  width: 3px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* animação suave */
+.waveform {
+  transition: all 0.3s ease;
+}
+
+/* glow da barra */
+.glow-bar {
+  background: linear-gradient(to right, #8806CE, #A020F0);
+  box-shadow: 
+    0 0 8px rgba(160, 32, 240, 0.8),
+    0 0 16px rgba(160, 32, 240, 0.6),
+    0 0 24px rgba(136, 6, 206, 0.4);
+  transition: width 0.1s linear;
+}
+
+/* hover deixa mais vivo */
+.group:hover .wave-bar {
+  opacity: 0.9;
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', sans-serif;
+  --font-heading: var(--font-sans);
+
+  --radius: 0.75rem;
+
+  /* 🔥 ESSA PARTE RESOLVE O BUG */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: #0B0B0F;
+  --foreground: #E6E6EB;
+
+  /* 🧱 SUPERFÍCIES */
+  --card: #181A20;
+  --card-foreground: #E6E6EB;
+
+  --popover: #111217;
+  --popover-foreground: #E6E6EB;
+
+  /* 🎨 COR PRINCIPAL (default = rosa) */
+  --primary: #FF7DA9;
+  --primary-foreground: #FFFFFF;
+
+  /* 🎛️ SECUNDÁRIO */
+  --secondary: #20232B;
+  --secondary-foreground: #A8ACB8;
+
+  /* 🌫️ MUTED */
+  --muted: #181A20;
+  --muted-foreground: #6B7280;
+
+  /* ✨ ACCENT (hover/interações) */
+  --accent: #20232B;
+  --accent-foreground: #E6E6EB;
+
+  /* 🚨 DESTRUCTIVE */
+  --destructive: #FF4D4D;
+
+  /* 📏 BORDAS */
+  --border: #2A2E38;
+  --input: #2A2E38;
+
+  /* 🎯 FOCUS */
+  --ring: #8806CE;
+
+  /* 📦 SIDEBAR */
+  --sidebar: #111217;
+  --sidebar-foreground: #E6E6EB;
+
+  --sidebar-primary: #E4007C;
+  --sidebar-primary-foreground: #FFFFFF;
+
+  --sidebar-accent: #20232B;
+  --sidebar-accent-foreground: #E6E6EB;
+
+  --sidebar-border: #2A2E38;
+  --sidebar-ring: #8806CE;
+}
+
+/* 🌌 DARK (mantém igual, mas preparado pra alternar no futuro) */
+.dark {
+  --background: #0B0B0F;
+  --foreground: #E6E6EB;
+
+  --card: #181A20;
+  --card-foreground: #E6E6EB;
+
+  --popover: #111217;
+  --popover-foreground: #E6E6EB;
+
+  --primary: #E4007C;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #20232B;
+  --secondary-foreground: #A8ACB8;
+
+  --muted: #181A20;
+  --muted-foreground: #6B7280;
+
+  --accent: #20232B;
+  --accent-foreground: #E6E6EB;
+
+  --destructive: #FF4D4D;
+
+  --border: #2A2E38;
+  --input: #2A2E38;
+
+  --ring: #8806CE;
+}
+
+/* 🧱 BASE */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
