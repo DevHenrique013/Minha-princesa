@@ -21,7 +21,7 @@ export const galleryItems: GalleryItem[] = [
   {
     type: "image",
     id: "img-1",
-    src: "public/images/us/imagem_1.webp",
+    src: "/images/us/imagem_1.webp",
     title: "Meu primeiro presentinho",
     description:
       "Quando fui fazer eu estava há muito tempo sem desenhar, tive que voltar a ativa, fiz e refiz esse mesmo desenho umas 5 vezes, mas valeu muito a pena, muito pela forma com que você tratou ele, você ficou toda ansiosa enquanto eu fazia, eu demorei tipo uns 3 dias, todos os dias eu chegava na escola e só ficava desenhando, até eu finalmente terminar, me lembro que mais tarde eu percebi que realmente errei o seu cabelo, mas era por que eu quase não consguia te enxergar direito pelas fotos e tudo mais.",
